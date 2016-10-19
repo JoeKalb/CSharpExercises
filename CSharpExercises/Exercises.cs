@@ -80,10 +80,12 @@ namespace CSharpExercises
             for (int i = 1; i <= 10; i++)
             {
                 int answer = i * number;
-                result += number.ToString() + " * " + i.ToString() + " = " + answer.ToString() + "\n";
+                result += number.ToString() + " * " + i.ToString() + " = " + answer.ToString();
+                if (i != 10) result += "\r\n";
             }
-            result = result.Remove(result.LastIndexOf("\n"));
+
             Console.WriteLine("The PrintTimesTable outputs: \n" + result);
+
             return result;
         }
         // 9. Create a method called ConvertKelvinToFahrenheit that accepts a double representing a temperature in kelvin and returns a double containing the temperature in Fahrenheit.
@@ -131,11 +133,11 @@ namespace CSharpExercises
                 {
                     line += number;
                 }
-                result += line + "\n";
-                
+                result += line;
+                if (i != width - 1) result += "\r\n";
+
             }
-            result = result.Remove(result.LastIndexOf("\n"));
-            Console.WriteLine(result);
+            Console.WriteLine("The DrawTriangle outputs: \n" + result);
             return result;
         }
         // 13. Create a method called GetMilesPerHour that accepts a double representing distance and three integers representing hours, minutes and seconds. The method should return the speed in MPH rounded to the nearest whole number as a string. (e.g. "55MPH")
@@ -264,7 +266,7 @@ namespace CSharpExercises
                 if (i % 3 == 0) result += "Duck";
                 if (i % 5 == 0) result += "Goose";
                 if (i % 3 != 0 && i % 5 != 0) result += i;
-                if (i != count) result += "\n";
+                if (i != count) result += "\r\n";
             }
 
             Console.WriteLine(result);
